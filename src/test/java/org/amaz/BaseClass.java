@@ -8,6 +8,7 @@ import org.Info.AndroidDriver;
 import org.Info.MobileElement;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.touch.TouchActions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
@@ -17,14 +18,14 @@ public class BaseClass {
 	public static io.appium.java_client.android.AndroidDriver<io.appium.java_client.MobileElement> driver;
 	public static void AppLaunch() {
 		// TODO Auto-generated method stub
-DesiredCapalities cp = new DesiredCapalites();
+DesiredCapabilities cp = new DesiredCapabilities();
 cp.setCapability("deviceName","oneplus6 ");
 cp.setCapability("platformName","Android ");
 cp.setCapability("platformVersion","10 ");
 cp.setCapability("appPackage","in.amazon.mshop.android.shopping");
 cp.setCapability("appActivity","com.amazon.mshop.home.HomeActivity");
 
-AndroidDriver<MobilElement>(new URL("Http://0.0.0.0:4723",cp));
+driver= new AndroidDriver<MobilElement>(new U("Http://0.0.0.0:4723",cp));
 
 public static void fill(WebElement e, String s) {
 e.sendKeys(s);	
